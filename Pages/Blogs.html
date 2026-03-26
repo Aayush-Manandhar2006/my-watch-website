@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta author="Aura Watches" content="Aura Watches" />
+    <meta name="description" content="Aura Watches Blog" />
+    <meta name="keywords" content="Aura Watches, Blog, Watches" />
+    <meta http-equiv="refersh" content="30" />
+    <!--Will refresh the page every 30 seconds-->
+    <link rel="stylesheet" href="../Css/Home.css" />
+    <!--External CSS-->
+    <title>Blogs and Stories</title>
+    <style>
+      /*Internal CSS*/
+      h1 {
+        color: #00307d;
+        margin: 0%;
+        text-align: center;
+        font-size: 100px;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      .pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .pic img {
+        width: 50%;
+        height: 500px;
+        border-radius: 20px;
+      }
+
+      .navbar {
+        text-align: center;
+        padding: 30px;
+
+        a {
+          color: #5a3716;
+          padding: 30px;
+          flex: inline-block;
+          text-decoration: none;
+          font-size: 20px;
+        }
+        a:hover:not(.active) {
+          /*when the pointer is on the text of navigation bar which is not active it changes this style*/
+          transition: all 0.5s ease-in;
+          font-size: 30px;
+          text-decoration: none;
+        }
+        a.active/*when the page is active it changes this style*/ {
+          font-size: 30px;
+          font-weight: bold;
+        }
+      }
+
+      div.Blogs {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around; /* Adjust horizontal alignment */
+        align-items: flex-start; /* Adjust vertical alignment */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+      }
+      div.Blog {
+        width: 325px;
+        height: 500px;
+        flex-direction: column; /* Ensure items are stacked vertically */
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid #f1b85b; /*border color*/
+        border-radius: 20px;
+        align-items: center; /*align items in the center*/
+        background-color: #fff4e6;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 200px;
+          border-radius: 10px;
+        }
+        h2 {
+          color: #00307d;
+          text-align: center; /*aligns text in the center*/
+          font-size: 25px;
+        }
+        p {
+          color: #00307d;
+          text-align: center;
+          font-size: 20px;
+        }
+        a {
+          text-decoration: none;
+          color: #f1b85b;
+          text-align: center;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+      .paragraph {
+        color: #00307d;
+        text-align: left;
+        font-size: 20px;
+        margin: 20px;
+        width: 90%;
+      }
+      .article {
+        text-align: left;
+        font-size: 20px;
+        margin: 20px;
+        width: 90%;
+        color: #00307d;
+        h2 {
+          font-size: 30px;
+        }
+        ul {
+          border: 2px solid #e29210;
+          border-radius: 15px;
+          padding: 30px;
+          background-color: #fff4e6;
+        }
+        image {
+          width: 35%;
+          height: 200px;
+          border-radius: 10px;
+        }
+      }
+    </style>
+  </head>
+  <header>
+    <div class="main">
+      <a href="../HomePage.html"
+        ><img src="../Images/logo.png" height="45px" width="150px" />
+      </a>
+      <ul>
+        <li>
+          <a href="../HomePage.html"><span class="a:hover">Home</span></a>
+        </li>
+        <li>
+          <a href="../Pages/product.html"
+            ><span class="a:hover">Products</span></a
+          >
+        </li>
+        <li>
+          <a href="../Pages/Blogs.html"><span class="a:hover">Blog</span></a>
+        </li>
+        <li>
+          <a href="../Pages/reference.html"
+            ><span class="a:hover">References</span></a
+          >
+        </li>
+        <li>
+          <a href="../Pages/Aura.html"><span class="a:hover">About Us</span></a>
+        </li>
+      </ul>
+
+      <br /><br />
+    </div>
+  </header>
+
+  <body>
+    <h1>BLOGS & STORIES</h1>
+    <!--Heading of the blog page-->
+    <nav class="navbar">
+      <!--Navigation bar of blog page-->
+
+      <a class="active" href="Blogs.html"
+        ><span style="text-decoration: underline"> Articles</span> </a
+      ><!--Active class is used to highlight the current page-->
+      <a href="W&T.html">Watch & Technology</a>
+      <a href="T.html">Trends</a>
+      <a href="O.html">Our Stories</a>
+    </nav>
+
+    <div class="Blogs">
+      <div class="Blog">
+        <a href="W&T1.html"
+          ><img src="../Images/W&T1.jpg" alt="Image" />
+          <h2>The impact of technology on the watch industry.</h2>
+          <p>
+            With the rise of technology, the watch industry has undergone
+            significant changes. One of the most notable developments is the
+            introduction of smartwatches.
+          </p>
+        </a>
+      </div>
+      <div class="Blog">
+        <a href="W&T2.html"
+          ><img src="../Images/W&T2.webp" alt="Image" />
+          <h2>The Impact of Technology in WatchMaking Indusrty.</h2>
+          <p>
+            In the intricate world of watchmaking, time is not just a
+            measurement but a showcase of fine craftsmanship, fashion, and the
+            evolution of timepieces throughout history.
+          </p>
+        </a>
+      </div>
+      <div class="Blog">
+        <a href="W&T3.html"
+          ><img src="../Images/W&T3.png" alt="Image" />
+          <h2>Impact of Social Media in Watch Indusrty</h2>
+          <p>
+            Whilst traditional watches could have easily gotten lost with the
+            introduction of both digital and smartwatches, these classic
+            timepieces maintain their popularity.
+          </p>
+        </a>
+      </div>
+      <div class="Blog">
+        <a href="W&T4.html"
+          ><img src="../Images/W&T4.webp" alt="Image" />
+          <h2>Decline of WatchMakers in Watch Industry</h2>
+          <p>
+            Throughout history, watchmakers have had a huge role in all areas
+            from design and creation to repair and maintenance. Yet with the
+            evolution of technology and mass production, some of these
+            traditional roles are in decline.
+          </p>
+        </a>
+      </div>
+      <div class="Blogs">
+        <div class="Blog">
+          <a href="T1.html"
+            ><img src="../Images/T1.webp" alt="Image" />
+            <h2>Current Trends in Watch Industry</h2>
+            <p>
+              When looking at the demographics of the world’s active
+              watchmakers, the industry typically falls under traditional gender
+              roles with 83.3% of watchmakers in the US male.
+            </p>
+          </a>
+        </div>
+        <div class="Blog">
+          <a href="T2.html"
+            ><img src="../Images/T2.webp" alt="Image" />
+            <h2>The Most Popular Watch Brands</h2>
+            <p>
+              The watch industry features an incredible range of reputable and
+              popular brands, each with its distinct style and heritage.
+            </p>
+          </a>
+        </div>
+        <div class="Blog">
+          <a href="T3.html"
+            ><img src="../Images/T3.jpg" alt="Image" />
+            <h2>Top 3 Watches for Ladies</h2>
+            <p>
+              In the world of luxury accessories, women’s watches stand out as
+              both symbols of sophistication and benchmarks of craftsmanship.
+            </p>
+          </a>
+        </div>
+        <div class="Blog">
+          <a href="T4.html"
+            ><img src="../Images/T4.webp" alt="Image" />
+            <h2>Top 3 Watches for Men</h2>
+            <p>
+              A wristwatch is more than just a tool to tell the time; it’s an
+              extension of your personality, a nod to tradition, and often a
+              lifelong investment.
+            </p>
+          </a>
+        </div>
+        <div class="Blogs">
+          <div class="Blog">
+            <a href="O1.html"
+              ><img src="../Images/O1.avif" alt="Image" />
+              <h2>Aura Watches Joins Hands with FIFA World Cup 2026</h2>
+              <p>
+                In an exciting development, Aura Watches, an e-commerce platform
+                renowned for offering a curated collection of premium
+                timepieces, proudly announces its official partnership with the
+                FIFA World Cup 2026.
+              </p>
+            </a>
+          </div>
+          <div class="Blog">
+            <a href="O2.html"
+              ><img src="../Images/O2.png" alt="Image" />
+              <h2>Aura Watches Joins Hands with Real Madrid</h2>
+              <p>
+                Aura Watches, the premier e-commerce platform for luxury
+                timepieces, is proud to announce its official collaboration with
+                Real Madrid, one of the most iconic football clubs in the world.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div class="top-row">
+      <div class="feature">
+        <img
+          src="../Images/Verified.png"
+          alt="Authorized Retailer"
+          height="25"
+          width="25"
+        />
+        <h3>AUTHORIZED RETAILER</h3>
+        <p>
+          We are an Official Authorized Retailer, ensuring guaranteed
+          authenticity.
+        </p>
+      </div>
+      <div class="feature">
+        <img
+          src="../Images/box.png"
+          alt="Free Shipping"
+          height="25"
+          width="25"
+        />
+        <h3>FREE SHIPPING</h3>
+        <p>
+          Enjoy free shipping on most orders, straight from the brand to you.
+        </p>
+      </div>
+      <div class="feature">
+        <img
+          src="../Images/return.png"
+          alt="Easy Returns"
+          height="25"
+          width="25"
+        />
+        <h3>EASY RETURNS</h3>
+        <p>
+          If you are not happy with your order, you can return it, no questions
+          asked.
+        </p>
+      </div>
+      <div class="feature">
+        <img
+          src="../Images/6-months_warranty.png"
+          alt="Warranty"
+          height="25"
+          width="30"
+        />
+        <h3>INTERNATIONAL WARRANTY</h3>
+        <p>
+          Each watch comes with an international warranty of 6 months from the
+          brand.
+        </p>
+      </div>
+    </div>
+    <h5 style="text-align: center; font-weight: 200px">
+      <!-- In-Line CSS -->
+      CopyRight © All Rights Reseverd 2025 | AURA Watches
+    </h5>
+  </footer>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <link rel="stylesheet" href="../Css/Home.css"> <!-- Link to the CSS file -->
+        <!-- Contains meta-information about the website -->
+        <title>Products</title>
+        <meta content="Products Page" name="description">
+        <meta name = "keywords" content = "Products, Product Page, Watches">
+        <meta name="author" content="Samriddha Sapkota">
+
+        <style>
+             /* Internal CSS*/
+            h2 {
+                font-size: 64px; 
+                color: darkgray; 
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); 
+                letter-spacing: 2px; 
+                text-transform: uppercase;
+            }
+            .bg {
+                background-image: url(../images/e.jpg); /* Relative path to the image */
+                background-position: top; /* Position the image */
+                background-size: stretch; /* Stretch the image */
+                background-position: top 25% left 0; 
+                padding-left: 30px;
+                height: 1400px;
+                display: flex;  /* Flexbox for centering text */
+                flex-direction: column; 
+                align-items: flex-start;
+                justify-content: center;
+            }
+
+            .view-products-btn {
+                background-color: rgb(187, 177, 123); 
+                color: white; 
+                font-size: 16px; 
+                padding: 15px 30px; /* Padding for better spacing */
+                border: none; /* Remove default border */
+                border-radius: 50px; /* Rounded corners */
+                cursor: pointer; /* Pointer cursor on hover */
+                text-transform: uppercase; /* Uppercase text */
+                letter-spacing: 2px; /* Spacing between letters */
+                transition: all 0.3s ease; /* Smooth transition for animations */
+            }
+
+            /* Hover effect */
+            .view-products-btn:hover {
+                background-color: olive; /* Matching the olive color in the header */
+                color: gold; /* Change text color on hover */
+                transform: translateY(5px); /* Move button up slightly */
+            }
+
+            /* Active effect (when clicked) */
+            .view-products-btn:active {
+                transform: translateY(0); /* Reset position */
+            }
+
+            .product-container {
+                background-color: #F7E7CE;
+            }
+
+            .product-container .productsearch {
+                text-align: center;
+                font-size: 50px;
+                color: black;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            .productsearch .productTable {
+                width: 100%;
+                cursor: pointer;
+            }
+
+            /* Collection Box Container */
+            .collection-box {
+                background-color: #F7E7CE;
+                text-align: center;
+            }
+
+            /* Collection Title */
+            .collection-title {
+                font-size: 48px;
+                color: #333;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            /* Collection Description */
+            .collection-description {
+                font-size: 20px;
+                color: #666;
+                margin-bottom: 40px;
+            }
+
+            /* Collection Flexbox */
+            .collection-grid {
+                display: flex;
+                flex-wrap: wrap; /* Ensures items wrap to the next row if needed */
+                gap: 30px;
+                justify-content: center; /* Centers the items horizontally */
+                padding: 20px;
+                overflow: hidden;
+            }
+
+            /* Collection Item */
+            .collection-item {
+                background-color: #e7d0aa;
+                padding: 20px;
+                border-radius: 10px;
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                flex: 1 1 calc(20% - 30px); 
+                max-width: calc(20% - 30px); 
+            }
+
+            .collection-item:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .collection-item img {
+                max-width: 100%;
+                height: 250px;
+                object-fit: contain; /* Ensures the image is not stretched */
+                transition: transform 0.3s ease; /* Allows for smooth image transitions */
+            }
+
+            .collection-item:hover img {
+                transform: scale(1.05); /* Enlarge image on hover */
+                cursor: pointer; 
+            }
+
+            .collection-item h3 {
+                font-size: 24px;
+                color: #333;
+                margin: 15px 0 10px;
+            }
+
+            .collection-item p {
+                font-size: 18px;
+                color: black;
+                margin-top: auto;
+            }
+
+            .learn-more-btn {
+                background-color: #555;
+                color: white;
+                font-size: 14px;
+                padding: 8px 16px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                margin-bottom: 10px;
+            }
+
+            .learn-more-btn:hover {
+                background-color: #777;
+                transform: translateY(-3px);
+            }
+
+            .learn-more-btn:active {
+                transform: translateY(0);
+            }
+
+            /* Add to Cart Button */
+            .add-to-cart-btn {
+                background-color: #333;
+                color: #fff;
+                font-size: 16px;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+                margin-bottom: 20px;
+            }
+            .add-to-cart-btn:hover {
+                background-color: #555;
+                transform: translateY(-3px);
+            }
+
+            .add-to-cart-btn:active {
+                transform: translateY(0);
+            }
+
+            /* Removing scrollbar */
+            ::-webkit-scrollbar {
+                display: none;
+            }
+
+            #goBackBtn {
+                background-color: goldenrod;
+                color: #333;
+                padding: 10px 20px;
+                border: 2px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                margin: 20px 0;
+            }
+
+            #goBackBtn:hover {
+                background-color: #333;
+                color: white;
+                border-color: #333;
+            }
+            .original-price {
+                text-decoration: line-through;
+                color: red;
+                margin-right: 5px;
+            }
+
+            .discounted-price {
+                font-weight: bold;
+                color: black;
+            }
+            
+
+            /* Modal Styles */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            .modal-content {
+                background-color: goldenrod;
+                margin: 10% auto;
+                padding: 20px;
+                border-radius: 10px;
+                width: 60%;
+                max-width: 800px;
+                position: relative;
+            }
+
+            .close-btn {
+                position: absolute;
+                right: 20px;
+                top: 10px;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+                color: grey;
+            }
+
+            .close-btn:hover {
+                color: black;
+            }
+
+            #modalSpecs, #modalReviews {
+                margin-top: 20px;
+            }
+
+            #reviewsList {
+                max-height: 200px;
+                overflow-y: auto;
+                margin-bottom: 20px;
+            }
+
+            #reviewForm textarea {
+                width: 100%;
+                height: 100px;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border: 1px solid #c4c4c4;
+            }
+
+            #reviewForm button {
+                background-color: grey;
+                color: white;
+                padding: 10px 20px;     
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            #reviewForm button:hover {
+                background-color: #555555;
+            }
+            
+
+            textarea {
+                resize: none;
+            }
+
+        </style>
+    </head> 
+
+    <body>
+        <header>
+            <div class="main">
+                <a href="../HomePage.html"><img src="../Images/logo.png" height="45px" width="150px"> </a>
+                    <ul>
+                        <li><a href="../HomePage.html"><span class="a:hover">Home</span></a></li> 
+                        <li><a href="../Pages/product.html"><span class="a:hover">Products</span></a></li>
+                        <li><a href="../Pages/Blogs.html"><span class="a:hover">Blog</span></a></li>
+                        <li><a href="../Pages/reference.html"><span class="a:hover">References</span></a></li>
+                        <li><a href="../Pages/Aura.html"><span class="a:hover">About Us</span></a></li>
+                    </ul>
+        
+                    <br><br>
+        
+            </div>
+        </header>
+            <div class="bg">
+            <!-- Header section with a background class -->
+            <h1>
+                <img src="../Images/logo.png" alt="Logo" style="height: 100px;">
+            </h1>
+            <br>
+            <h2>Where Precision Meets <br> Perfection. </h2>
+            <br>
+            <h3 id = "typeW" style="font-size: 50px; color: olive;"> Luxury on Your Wrist...</h3>
+            <br>
+            <br>
+             <!-- Button to view the collection -->     
+            <button class="view-products-btn" onclick="scrolltoCollection()">View Collection</button>
+            </div>
+        </header>
+
+        <div class="product-container"> <!-- Container for product search section -->
+            <section class="productsearch"> <!-- Section for product search -->
+                <h4 style="margin-left: 150px;">Shop By Brands :</h4>
+            
+                <table class="productTable">
+                    <!-- Table to display brand logos -->
+                    <tr>
+                        <td>
+                            <!-- Richard Millie logo -->
+                            <img id="rm" src="../Images/rm.png" width="200" alt="RichardMillie.png" onclick="showCollection('rm')">
+                        </td>
+
+                        <td>
+                            <!-- Patek Philippe logo -->
+                            <img id="pp" src="../Images/pp.png" width="200" height="150" alt="Patek Philippe.png" onclick="showCollection('pp')">
+                        </td>
+
+                        <td>
+                            <!-- Audemars Piguet logo -->
+                            <img id="ap" src="../Images/ap.png" width="150" alt="Audemars Piguet.png" onclick="showCollection('ap')">
+                        </td>
+                    </tr>
+                </table>
+                
+            </section>
+        </div>
+
+        <div class="collection-box"> <!-- Container for collection section -->
+            <div id="Test">  
+            <h2 class="collection-title">Our Collection</h2> 
+            </div>
+            <p class="collection-description">Explore our exclusive range of luxury watches.</p>
+            <button id="goBackBtn" onclick="showFullCollection()" style="display: none;">Go Back</button> <!-- Button to go back to the full collection -->
+            <div class="collection-grid"> <!-- Grid to display the collection -->
+                <!-- Collection items with images, titles, prices, and add-to-cart buttons -->
+            <div class="collection-item">
+                <img src="../Images/watches/Ap/Ap-26.png" alt="Supersonnerie.png">
+                <h3>Audemars Piguet - Supersonnerie</h3>
+                <p><span class="original-price">$399,999</span> <span class="discounted-price">$349,999</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Rm/Rm-25.png" alt="Rm-25.png">
+                <h3>Richard Millie - RM025</h3>
+                <p><span class="original-price">$365,000</span> <span class="discounted-price">$310,000</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Pp/Pp-600.png" alt="Grand Complications.png">
+                <h3>Patek Philippe - Grand Complications</h3>
+                <p><span class="original-price">$194,190</span> <span class="discounted-price">$174,900</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Ap/Ap-23.png" alt="Selfwinding.png">
+                <h3>Audemars Piguet - Selfwinding</h3>
+                <p><span class="original-price">$28,500</span> <span class="discounted-price">$24,999</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Pp/Pp-532.png" alt="Perpetual calendar.png">
+                <h3>Patek Philippe - Perpetual Calendar</h3>
+                <p><span class="original-price">$106,640</span> <span class="discounted-price">$95,500</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Rm/Rm-60.png" alt="Regatta Flyback Chronograph.png">
+                <h3>Richard Millie - Regatta Flyback Chronograph</h3>
+                <p><span class="original-price">$206,500</span> <span class="discounted-price">$189,999</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Ap/Ap-24.png" alt="Selfwinding Chronograph.png">
+                <h3>Audemars Piguet - Selfwinding Chronograph</h3>
+                <p><span class="original-price">$39,999</span> <span class="discounted-price">$34,999</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Rm/Rm-56.png" alt="Tourbillon Sapphire.png">
+                <h3>Richard Millie - Tourbillon Sapphire</h3>
+                <p><span class="original-price">$1,885,500</span> <span class="discounted-price">$1,750,000</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Pp/Pp-530.png" alt="5303R - Grand Complications.png">
+                <h3>Patek Philippe - 5303R Grand Complications</h3>
+                <p><span class="original-price">$780,000</span> <span class="discounted-price">$710,000</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Ap/Ap-25.png" alt="Flying Tourbillon.png">
+                <h3>Audemars Piguet - Flying Tourbillon</h3>
+                <p><span class="original-price">$195,000</span> <span class="discounted-price">$175,000</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Rm/Rm-33.png" alt="Calibre RMXP1.png">
+                <h3>Richard Millie - Calibre RMXP1</h3>
+                <p><span class="original-price">$145,000</span> <span class="discounted-price">$130,000</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+
+            <div class="collection-item">
+                <img src="../Images/watches/Pp/Pp-527.png" alt="5270J - Grand Complications.png">
+                <h3>Patek Philippe - 5270J Grand Complications</h3>
+                <p><span class="original-price">$195,000</span> <span class="discounted-price">$175,500</span></p>
+                <button class="learn-more-btn">Learn More</button>
+                <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+            </div>
+            
+            <!-- Modal Structure -->
+            <div id="productModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2 id="modalTitle"></h2>
+                    <div id="modalSpecs"></div>
+                    <div id="modalReviews">
+                        <h3>Reviews</h3>
+                        <div id="reviewsList"></div>
+                        <form id="reviewForm">
+                            <textarea id="reviewInput" placeholder="Write your review here..." ></textarea>
+                            <button type="submit" onclick="reviewvalidation()">Submit Review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        <script src="../Js/Script.js"></script> <!-- External JavaScript file --> 
+        <script>
+           var element = document.getElementById('typeW');
+            var text = element.textContent;
+            element.textContent = '';
+            var i = 0;
+            var isTyping = true; 
+
+            function typeWriter() {
+            if (isTyping) {
+                // Typing phase: Add characters one by one
+                if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                } else {
+                // Switch to deleting phase after typing is complete
+                isTyping = false;
+                }
+            } else {
+                // Deleting phase: Remove characters one by one
+                if (element.textContent.length > 0) {
+                element.textContent = element.textContent.slice(0, -1); // Removes the last character
+                } else {
+                // Switch back to typing phase after deleting is complete
+                isTyping = true;
+                i = 0; // Reset the counter for typing
+                }
+            }
+            }
+
+            var intervalId = setInterval(typeWriter, 150); // 150ms delay between each character.
+
+            //function to scroll to the collection section
+            function scrolltoCollection() {
+            var element = document.getElementById("Test");
+            element.scrollIntoView({ behavior: "smooth" });
+            }
+
+
+        </script>
+    </body>
+
+    <footer>
+        <div class="top-row">
+          <div class="feature">
+            <img
+              src="../Images/Verified.png"
+              alt="Authorized Retailer"
+              height="25"
+              width="25"
+            />
+            <h3>AUTHORIZED RETAILER</h3>
+            <p>
+              We are an Official Authorized Retailer, ensuring guaranteed
+              authenticity.
+            </p>
+          </div>
+          <div class="feature">
+            <img src="../Images/box.png" alt="Free Shipping" height="25" width="25" />
+            <h3>FREE SHIPPING</h3>
+            <p>
+              Enjoy free shipping on most orders, straight from the brand to you.
+            </p>
+          </div>
+          <div class="feature">
+            <img src="../Images/return.png" alt="Easy Returns" height="25" width="25" />
+            <h3>EASY RETURNS</h3>
+            <p>
+                  If you are not happy with your order, you can return it, no
+              questions asked.
+            </p>
+          </div>
+          <div class="feature">
+            <img src="../Images/6-months_warranty.png" alt="Warranty" height="25" width="30"/>
+            <h3>INTERNATIONAL WARRANTY</h3>
+            <p>
+              Each watch comes with an international warranty of 6 months from the
+              brand.
+            </p>
+          </div>
+        </div>
+        <h5 style="text-align: center; font-weight: 200px">
+          <!-- In-Line CSS -->
+          CopyRight © All Rights Reseverd 2025 | AURA Watches
+        </h5>
+      </footer>
+</html>

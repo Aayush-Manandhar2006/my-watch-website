@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <meta name="Home Page" content="HTML">
+    <meta name="keywords" content="Basic HTML">
+    <meta name="author" content="Aayush Manandhar">
+    <link rel="stylesheet" href="../Css/Home.css">
+</head>
+<style>
+    header {
+        background: linear-gradient(90deg,  #333 30%,  #D4AF37 50%,#333 70%);
+        position: sticky;
+        top: 0;
+        padding: 20px 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Video section */
+    video {
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: -1;
+    }
+    
+    /*Dot slider section*/
+    .switch {
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dot:hover {
+    background-color: gold;
+}
+
+.dot.active {
+    background-color: gold;
+    transform: scale(1.2);
+}
+
+   
+    /* Featured Collection Section */
+
+    .FeaturedSection {
+        position: relative;
+        margin-top: 600px;
+        max-width: 2000px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .featured {
+        position: relative;
+        text-align: center;
+        margin: 10px 10px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 60px;
+    }
+
+    .item {
+        background-color: #e7d0aa;
+        padding: 30px;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .category {
+        max-width: 1080px;
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .column {
+        margin-bottom: 30px;
+        flex-basis: 30%;
+        min-width: 250px; 
+        position: relative;
+    }
+
+    .column span {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #CFB53B;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        opacity: 0;
+        transition: 0.8s ease;
+        z-index: 1;
+    }
+
+    .column img {
+        width: 100%;
+        height: 300px;
+        border-radius: 8px;
+        display: block;
+        background-color: #e7d0aa;
+        padding: 20px;
+        border-radius: 10px;
+        transition: 0.8s ease;
+    }
+
+    .column img:hover {
+        color: black;
+        background: linear-gradient(90deg, gold 30%, goldenrod 50%);
+        filter: brightness(30%);
+    }
+
+    .column img:hover + span {
+        opacity: 1;
+    }
+
+    /* Explore Now button */
+    .buttons {
+        left: 70%;
+        position: absolute;
+        padding-right: 80px;
+        align-items: right;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .explore {
+        font-size: 30px;
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-decoration: none;
+        display: inline-block;
+        background-color: gold;
+        color: #333;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 25px;
+        transition: 0.2s ease-in-out;
+        height: 60px;
+        width: 400px;    
+        cursor: pointer;
+    }
+
+    .explore:hover {
+        background-color: #333;
+        color: goldenrod;
+        cursor: pointer;
+    }
+
+    /* What we Do */
+    .content {
+        position: relative;
+        margin-bottom: 20px;
+        text-align: left;
+        margin-left: 10px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 30px;
+    }
+
+    div.Blogs 
+{
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around; /* Adjust horizontal alignment */
+        align-items: flex-start; /* Adjust vertical alignment */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+ }
+
+
+
+ div.Blog {
+        width: 325px;
+        height: 500px;
+        flex-direction: column; /* Ensure items are stacked vertically */
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid black; /*border color*/
+        border-radius: 20px;
+        align-items: center; /*align items in the center*/
+        background-color: #fff4e6;
+        overflow: hidden;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+
+        img {
+          width: 100%;
+          height: 200px;
+          border-radius: 10px;
+        }
+        h2 {
+          color: #00307d;
+          text-align: center; /*aligns text in the center*/
+          font-size: 25px;
+        }
+        p {
+          color: #00307d;
+          text-align: center;
+          font-size: 20px;
+        } 
+        a {
+          text-decoration: none;
+          color: #f1b85b;
+          text-align: center;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+      .paragraph {
+        color: #00307d;
+        text-align: left;
+        font-size: 20px;
+        margin: 20px;
+        width: 90%;
+      }
+      .article {
+        text-align: left;
+        font-size: 20px;
+        margin: 20px;
+        width: 90%;
+        color: #00307d;
+        h2 {
+          font-size: 30px;
+        }
+        ul {
+          border: 2px black;
+          border-radius: 15px;
+          padding: 30px;
+          background-color: #fff4e6;
+        }
+        image {
+          width: 35%;
+          height: 200px;
+          border-radius: 10px;
+        }
+      }
+
+      button {
+    font-size: 25px;
+    background-color: gold;
+    color: #333;
+    cursor: pointer;
+    position: fixed;
+    z-index: 10;
+    right: 20px;  /* Add some spacing from right edge */
+    top: 50%;     /* Position vertically at middle */
+    transform: translateY(-50%); /* Center it perfectly vertically */
+    border-radius: 45px;
+    padding: 10px 20px; /* Add some padding for better appearance */
+    border: none; /* Remove default border */
+    transition: 31 sec ease;
+}
+
+      button:hover
+      {
+            background-color: #333;
+            color: goldenrod;
+            cursor: pointer;
+      }
+
+.about
+{
+  /* Keep existing properties */
+  font-size: 30px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: 0;
+    display: inline-block;
+    background-color: gold;
+    color: #333;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    transition: 0.2s ease-in-out;
+    height: 60px;
+    width: 400px;    
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.about:hover
+{
+        background-color: #333;
+        color: goldenrod;
+        cursor: pointer;
+        text-decoration: none;
+        
+}
+</style>
+
+<header>
+    <div class="main">
+        <a href="../HomePage.html"><img src="../Images/logo.png" height="45px" width="150px"> </a>
+        <ul>
+            <li><a href="../HomePage.html">Home</a></li>
+            <li><a href="../Pages/product.html">Products</a></li>
+            <li><a href="../Pages/Blogs.html">Blog</a></li>
+            <li><a href="../Pages/reference.html">References</a></li>
+            <li><a href="../Pages/Aura.html">About Us</a></li>
+        </ul>
+        <br><br>
+    </div>
+</header> 
+
+<body class="body">
+      
+    <section>
+        <video width="400" class="video" autoplay loop muted>
+            <source src="../Videos/Patek3.mp4" type="video/mp4">
+        </video>
+      
+        <video width="400" class="video" autoplay loop muted>
+          <source src="../Videos/Video1.mp4" type="video/mp4">
+      </video>
+
+      <video width="400" class="video" autoplay loop muted>
+        <source src="../Videos/Video2.mp4" type="video/mp4">
+    </video>
+
+    <div class="switch">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+  </div>
+
+  <script>
+   /* Wait for page to load*/
+window.onload = function() {
+    /* Get all videos and dots*/
+    var videos = document.getElementsByClassName('video');
+    var dots = document.getElementsByClassName('dot');
+    
+    /*Hide all videos except first one*/
+    videos[0].style.display = 'block';
+    videos[1].style.display = 'none';
+    videos[2].style.display = 'none';
+    
+    /*Add click function to dots*/
+    for(var i = 0; i < dots.length; i++) {
+        dots[i].onclick = function() {
+            /* Get dot number*/
+            var dotNum = this.getAttribute('data-index');
+            
+            /* Hide all videos*/
+            for(var j = 0; j < videos.length; j++) {
+                videos[j].style.display = 'none';
+                dots[j].className = 'dot';
+            }
+            
+            /* Show selected video */
+            videos[dotNum].style.display = 'block';
+            this.className = 'dot active';
+        }
+    }
+}
+</script>
+    
+    <article>
+        <div class="FeaturedSection">
+            <!--Featured Categories Section-->
+            <div class="featured">
+                <span style="color: #333;"><b>Explore Featured Collections</b></span>
+            </div>
+
+            <div class="category">
+                <div class="row">
+                    <div class="column"><img src="../Videos/Watch1.mp4"><span>Upgrade Your Look, Tick by Tick.</span></div>
+                    <div class="column"><img src="../Videos/Watch2.mp4"><span>Watches That Define Your Moments.</span></div>
+                    <div class="column"><img src="../Videos/Watch3.mp4"><span>Luxury Timepieces for Every Occasion.</span></div>
+
+                    <div class="buttons">
+                        <a href="../Pages/product.html" class="explore"><b>Explore Now</b></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured"><span style="color: black"><b>What we do</b></span></div>
+                <br><br>
+            <div class="content"><span style="color: #333; text-align: center;"><b><p>At AuraWatches, we specialize in bringing you an exclusive collection of premium watches designed to suit every style and occasion. Whether you're longing for timeless classics, modern designs, or high-performance timepieces, we have something for everyone.</p></b></span></div>
+                <br><br><br><br>
+            <div class="featured"><span style="color: black"><b>Quality You Can Trust</b></span></div>
+                <br>
+            <div class="featured"><span style="color: black"><b>"When Quality Meets Timeless Elegance"</b></span></div>
+                <br><br>
+            <div class="content"><span style="color: #333; text-align: center;"><b><p>AuraWatches ensures that every watch is crafted with precision, durability, and elegance in mind, ensuring the customers their best value.</p></b></span></div>
+                <br>
+            <div class="featured"><span style="color: black;"><b>OUR IMPACT!!</b></span></div>
+        <div class="Blogs">
+            <div class="Blog">
+              <a href="../Pages/W&T2.html"
+                ><img src="../Images/W&T2.webp" alt="Image" />
+                <h2>The Impact of Technology in WatchMaking Industry.</h2>
+                <p>
+                  In the intricate world of watchmaking, time is not just a
+                  measurement but a showcase of fine craftsmanship, fashion, and the
+                  evolution of timepieces throughout history.
+                </p>
+              </a>
+            </div>
+            <div class="Blog">
+              <a href="../Pages/W&T3.html"
+                ><img src="../Images/W&T3.png" alt="Image" />
+                <h2>Impact of Social Media in Watch Industry</h2>
+                <p>
+                  Whilst traditional watches could have easily gotten lost with the
+                  introduction of both digital and smartwatches, these classic
+                  timepieces maintain their popularity.
+                </p>
+              </a>
+            </div>
+            <div class="Blog">
+              <a href="../Pages/W&T4.html">
+                <img src="../Images/W&T4.webp" alt="Image" />
+                <h2>Decline of WatchMakers in Watch Industry</h2>
+                <p>
+                  Throughout history, watchmakers have had a huge role in all areas
+                  from design and creation to repair and maintenance. Yet with the
+                  evolution of technology and mass production, some of these
+                  traditional roles are in decline.
+                </p>
+              </a>
+            </div> 
+          <br><br><br>
+        </div>
+
+        <div class="featured"><span style="color: black;"><b>References for the project.</b></span></div>
+        <div class="content"><span style="color: #333; text-align: center;"><b><p>The following website's structure and attributes is structured to be an inspiration from the following websites.</p></b></span></div>
+        <div class="featured"><span style="color: #333; font-size: 45px;"><b>(Click on the logo to view the reference page.)</b></span></div>
+        <br><br>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+          <a href="../Pages/reference.html"><img width="400" src="../Images/AudemarsPiguetRemoveBG.png" alt="Audemars Piguet"></a>
+          <a href="../Pages/reference.html"><img width="400" src="../Images/PatekPhillepeRemoveBG.png" alt="Patek Philippe"></a>
+          
+      </div>
+      <br><br>
+      <div class="featured"><span style="color: black;"><b>About Us</b></span></div>
+      <div class="content"><span style="color: #333; text-align: center;"><b><p>Meet and Contact our team</p></b></span></div>
+      <br><br>
+      <a class="about" href="../Pages/Aura.html"><b>Contact Us</b></a>
+    </article>
+
+  </section>
+
+    <footer>
+        <div class="top-row">
+          <div class="feature">
+            <img
+              src="../Images/Verified.png"
+              alt="Authorized Retailer"
+              height="25"
+              width="25"
+            />
+            <h3>AUTHORIZED RETAILER</h3>
+            <p>
+              We are an Official Authorized Retailer, ensuring guaranteed
+              authenticity.
+            </p>
+          </div>
+          <div class="feature">
+            <img src="../Images/box.png" alt="Free Shipping" height="25" width="25" />
+            <h3>FREE SHIPPING</h3>
+            <p>
+              Enjoy free shipping on most orders, straight from the brand to you.
+            </p>
+          </div>
+          <div class="feature">
+            <img src="../Images/return.png" alt="Easy Returns" height="25" width="25" />
+            <h3>EASY RETURNS</h3>
+            <p>
+                  If you are not happy with your order, you can return it, no
+              questions asked.
+            </p>
+          </div>
+          <div class="feature">
+            <img src="../Images/6-months_warranty.png" alt="Warranty" height="25" width="30"/>
+            <h3>INTERNATIONAL WARRANTY</h3>
+            <p>
+              Each watch comes with an international warranty of 6 months from the
+              brand.
+            </p>
+          </div>
+        </div>
+        <h5 style="text-align: center; font-weight: 200px">
+          <!-- In-Line CSS -->
+          CopyRight © All Rights Reseverd 2025 | AURA Watches
+        </h5>
+      </footer>
+  </body>
+  </html>
+  
